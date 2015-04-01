@@ -1,0 +1,77 @@
+$max-width: 100%
+$column-width: 6.38298%
+$gutter-width: 4.52766%
+$maximum-columns: 12
+
+@function columns($columns, $container-columns: $maximum-columns)
+  $width: $columns * $column-width + ($columns - 1) * $gutter-width
+  $container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width
+  @return percentage($width / $container-width)
+
+@function gutter($container-columns: $maximum-columns, $gutter: $gutter-width)
+  $container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width
+  @return percentage($gutter / $container-width)
+
+@function offset-columns($columns)
+  $margin: $columns * $column-width + $columns * $gutter-width
+  @return $margin
+
+//Grid Mixins & Container Placeholder
+=col($columns, $maximum-columns: $maximum-columns, $omega: false)
+  width: columns($columns, $maximum-columns)
+  @if $omega == omega
+    float: right
+  @else if $omega == "none"
+    margin-right: gutter()
+  @else
+    margin-right: gutter()
+    float: left
+
+=omega
+  float: right
+  margin-right: 0
+
+=push($from-direction, $columns)
+  @if $from-direction == left
+    margin-left: offset-columns($columns)
+  @if $from-direction == right
+    margin-right: offset-columns($columns)
+
+%container
+  max-width: $max-width
+  margin-left: auto
+  margin-right: auto
+
+.grid
+  @extend %container
+  @extend %clearfix
+
+.grid-2
+  @include col(2)
+
+.grid-3
+  @include col(3)
+
+.grid-5
+  @include col(5)
+
+.grid-4
+  @include col(4)
+
+  &:nth-of-type(3n)
+    @include omega
+
+.grid-6
+  @include col(6)
+
+  &:nth-of-type(2n)
+    @include omega
+
+.grid-8
+  @include col(8)
+
+.grid-9
+  @include col(9)
+
+.grid-last-column
+  @include omega
