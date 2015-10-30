@@ -1,10 +1,10 @@
+import backbone from 'backbone';
+import hoodie  from'hoodie' ;
 (function (root, factory) {
 
   'use strict';
   if (typeof exports === 'object') {
 
-    var backbone = require('backbone');
-    var hoodie = require('hoodie');
 
     module.exports = factory(backbone, hoodie);
 
