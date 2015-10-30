@@ -72,6 +72,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  *\*------------------------------------ */
 /**
  * Calculate rems. $target = pixel size. $context = base pixel size */
+/* line 1, ../sass/quarks/_button.sass */
+.button {
+  background-color: #9c7dc0;
+  border: none;
+  border-radius: 3rem;
+  color: #fff;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1em 0;
+}
+
 /* line 1, ../sass/quarks/_input.sass */
 .input {
   color: #FFFFFF;
