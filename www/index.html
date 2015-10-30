@@ -15,6 +15,10 @@
         <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
         <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script src="/_api/_files/hoodie.js"></script>
+
         <!-- Tile icon for Win8 (144x144 + tile color) -->
         <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#222222">
@@ -53,10 +57,10 @@
             </span>
           </div>
 
-        <form>
+        <form class="form" method="GET">
           <input class="input input-text" name="email" placeholder="Email address" />
           <input class="input input-password" name="password" placeholder="*****" />
-          <button class="button">Sign in</button>
+          <button type="submit" class="button">Sign in</button>
         </form>
 
       </div>
