@@ -66,3 +66,63 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/*------------------------------------*\
+ *    $MIXINS
+ *\*------------------------------------ */
+/**
+ * Calculate rems. $target = pixel size. $context = base pixel size */
+/* line 1, ../sass/quarks/_input.sass */
+.input {
+  color: #FFFFFF;
+  background-color: #3A4754;
+  border: none;
+  padding: 0.5em;
+  font-size: 1.5em;
+  width: 100%;
+  display: block;
+  margin-bottom: 1em;
+}
+/* line 18, ../sass/utilities/_mixins.sass */
+.input ::-webkit-input-placeholder {
+  color: #617380;
+}
+/* line 20, ../sass/utilities/_mixins.sass */
+.input :-moz-placeholder {
+  color: #617380;
+}
+/* line 22, ../sass/utilities/_mixins.sass */
+.input ::-moz-placeholder {
+  color: #617380;
+}
+/* line 24, ../sass/utilities/_mixins.sass */
+.input :-ms-input-placeholder {
+  color: #617380;
+}
+/* line 13, ../sass/quarks/_input.sass */
+.input:focus {
+  background-color: #637582;
+}
+
+/* line 1, ../sass/views/_base.sass */
+html {
+  box-sizing: border-box;
+}
+
+/* line 4, ../sass/views/_base.sass */
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: 0 none;
+}
+
+/* line 8, ../sass/views/_base.sass */
+body {
+  font-size: 10px/15px;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  background-color: #2D3941;
+}
+/* line 13, ../sass/views/_base.sass */
+body .view-wrap {
+  padding: 2rem;
+  max-width: 320px;
+}

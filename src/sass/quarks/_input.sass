@@ -1,0 +1,14 @@
+.input
+  color: $color__input--color
+  background-color: $color__input--background
+  border: none
+  padding: .5em
+  font-size: 1.5em
+  width: 100%
+  display: block
+  margin-bottom: 1em
+  @include placeholder
+    color: $color__input--placeholder
+
+  &:focus
+    background-color: $color__input--background-active

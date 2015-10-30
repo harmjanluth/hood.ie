@@ -13,3 +13,13 @@
   -moz-#{$property}: $value
   -ms-#{$property}: $value
   -o-#{$property}: $value
+
+=placeholder
+  \::-webkit-input-placeholder
+    @content
+  \:-moz-placeholder
+    @content
+  \::-moz-placeholder
+    @content
+  \:-ms-input-placeholder
+    @content
