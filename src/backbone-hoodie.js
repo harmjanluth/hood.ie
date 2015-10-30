@@ -1,7 +1,6 @@
 (function (root, factory) {
 
   'use strict';
-
   if (typeof exports === 'object') {
 
     var backbone = require('backbone');
