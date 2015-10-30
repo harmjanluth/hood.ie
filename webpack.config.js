@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-    entry: './src/init.js',
+    entry: './src/js/init.js',
     output: {
         path: path.join(__dirname, 'www/js/'),
         filename: 'bundle.js'
@@ -10,7 +10,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: path.join(__dirname, 'src'),
+                test: path.join(__dirname, 'src/js'),
                 loader: 'babel-loader'
             }
         ]

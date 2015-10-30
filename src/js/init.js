@@ -1,4 +1,3 @@
-import * as Backbone from 'backbone';
 import * as BackboneHoodie from './backbone-hoodie.js';
 
 (function () {
@@ -13,6 +12,7 @@ import * as BackboneHoodie from './backbone-hoodie.js';
             name: 'New Task'
         }
     });
+
 
     var TaskCollection = Backbone.Collection.extend({
         // if a collection has a model, the adapter will keep the collection
