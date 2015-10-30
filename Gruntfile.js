@@ -8,13 +8,14 @@ module.exports = function (grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    concat: {
+    "babel": {
       options: {
-        separator: ';'
+        sourceMap: true
       },
       dist: {
-        src: ['src/**/*.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        files: {
+          "dist/<%= pkg.name %>.js": 'src/**/*.js'
+        }
       }
     },
 
@@ -24,21 +25,9 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'src/<%= pkg.name %>.min.js': ['<%= jshint.files[1]%>']
+          'dist/<%= pkg.name %>.min.js': ['src/**/*.js']
         }
       }
-    },
-
-    jshint: {
-      files: ['Gruntfile.js', 'src/backbone-hoodie.js'],
-      options: {
-        jshintrc: '.jshintrc'
-      }
-    },
-
-    watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint']
     },
 
     karma: {
@@ -57,7 +46,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('default', ['babel', 'uglify']);
   grunt.registerTask('test', ['karma:unit']);
   grunt.registerTask('test:watch', ['karma:unit_watch']);
 
