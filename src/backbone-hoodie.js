@@ -1,5 +1,6 @@
 import backbone from 'backbone';
-import hoodie  from'hoodie' ;
+import hoodie from 'hoodie';
+
 (function (root, factory) {
 
   'use strict';
